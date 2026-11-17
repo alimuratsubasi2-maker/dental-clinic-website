@@ -1,0 +1,234 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import SocialProof from '~/components/widgets/SocialProof.astro';
+import Features from '~/components/widgets/Features.astro';
+import Content from '~/components/widgets/Content.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Gülüş Diş Kliniği — Kadıköy’de Güvenilir Diş Tedavisi',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero -->
+
+  <Hero
+    tagline="Kadıköy · 2012'den beri"
+    actions={[
+      { variant: 'primary', text: 'Online Randevu Al', href: '/contact#form', icon: 'tabler:calendar-plus' },
+      { text: 'WhatsApp’tan Yaz', href: 'https://wa.me/905000000000', icon: 'tabler:brand-whatsapp' },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1600&q=80',
+      alt: 'Modern diş kliniği muayene odası',
+    }}
+  >
+    <Fragment slot="title">
+      Gülüşünüz için <span class="text-accent dark:text-white">acısız ve şeffaf</span> diş tedavisi
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      İmplanttan şeffaf plağa, diş beyazlatmadan çocuk diş hekimliğine kadar tüm tedaviler tek çatı altında. İlk muayenede
+      tedavi planınızı ve fiyatı yazılı olarak alırsınız; sürpriz ücret yok.
+    </Fragment>
+  </Hero>
+
+  <SocialProof
+    id="guven"
+    classes={{ container: '!pb-14 md:!pb-20' }}
+    items={[
+      { value: '4.9', label: 'Google puanı (620+ yorum)', icon: 'tabler:star-filled', color: 'text-amber-400' },
+      { value: '12 yıl', label: 'tecrübe', icon: 'tabler:award', color: 'text-emerald-500' },
+      { value: '7/24', label: 'acil hat', icon: 'tabler:phone-call', color: 'text-sky-500' },
+    ]}
+  />
+
+  <!-- Tedaviler -->
+
+  <Features
+    id="tedaviler"
+    tagline="Tedaviler"
+    title="Size uygun tedaviyi birlikte seçelim"
+    subtitle="Her tedavi öncesi dijital röntgen ve ağız içi tarama ile durumunuzu ekranda birlikte inceliyoruz."
+    items={[
+      {
+        title: 'İmplant',
+        description: 'Eksik dişler için ömür boyu garantili implant. Aynı gün geçici diş seçeneği.',
+        icon: 'tabler:dental',
+      },
+      {
+        title: 'Şeffaf Plak (Ortodonti)',
+        description: 'Tel takmadan, fark edilmeden diş düzeltme. Sonucu tedaviye başlamadan 3D olarak görün.',
+        icon: 'tabler:mood-smile-beam',
+      },
+      {
+        title: 'Diş Beyazlatma',
+        description: 'Tek seansta 4–8 ton daha beyaz dişler. Hassasiyet yapmayan ofis tipi beyazlatma.',
+        icon: 'tabler:sparkles',
+      },
+      {
+        title: 'Zirkonyum Kaplama',
+        description: 'Doğal görünümlü, metal içermeyen kaplamalarla estetik gülüş tasarımı.',
+        icon: 'tabler:diamond',
+      },
+      {
+        title: 'Çocuk Diş Hekimliği',
+        description: 'Oyun odalı, korkutmayan ortam. Çocuğunuzun ilk diş hekimi deneyimi keyifli olsun.',
+        icon: 'tabler:horse-toy',
+      },
+      {
+        title: 'Kanal Tedavisi',
+        description: 'Mikroskop destekli, tek seansta tamamlanabilen ağrısız kanal tedavisi.',
+        icon: 'tabler:first-aid-kit',
+      },
+    ]}
+  />
+
+  <!-- Neden biz -->
+
+  <Content
+    isReversed
+    tagline="Neden Gülüş?"
+    title="Fiyatı baştan bilin, tedaviyi rahat geçirin"
+    items={[
+      {
+        title: 'Yazılı tedavi planı ve fiyat',
+        description: 'İlk muayenede tüm tedavi adımları ve toplam ücret yazılı olarak elinize verilir.',
+      },
+      {
+        title: 'Taksit imkânı',
+        description: 'Tüm kredi kartlarına 6 aya kadar taksit, anlaşmalı kurumlara indirim.',
+      },
+      {
+        title: 'Steril ve modern ekipman',
+        description: 'Tek kullanımlık setler, dijital röntgen ve ağız içi 3D tarayıcı.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=1200&q=80',
+      alt: 'Diş hekimi hastasıyla konuşuyor',
+    }}
+  >
+    <Fragment slot="content">
+      Diş hekimine gitmeyi çoğumuz erteleriz; çoğu zaman sebebi korku ya da belirsiz fiyatlardır. Gülüş’te her şeyi önceden
+      konuşuyoruz.
+    </Fragment>
+  </Content>
+
+  <!-- Süreç -->
+
+  <Steps
+    id="surec"
+    title="Randevudan gülüşe 4 adım"
+    items={[
+      {
+        title: '1. Online randevu',
+        description: 'Size uygun saati seçin, 2 dakikada randevunuzu oluşturun.',
+        icon: 'tabler:calendar',
+      },
+      {
+        title: '2. Ücretsiz ilk muayene',
+        description: 'Dijital röntgen ve ağız içi tarama ile durumunuzu birlikte inceleyelim.',
+        icon: 'tabler:stethoscope',
+      },
+      {
+        title: '3. Yazılı tedavi planı',
+        description: 'Adımlar, süre ve toplam fiyat net. Onaylamadan hiçbir işlem yapılmaz.',
+        icon: 'tabler:file-text',
+      },
+      {
+        title: 'Yeni gülüşünüz hazır!',
+        icon: 'tabler:mood-happy',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1200&q=80',
+      alt: 'Klinik iç mekan',
+    }}
+  />
+
+  <!-- Yorumlar -->
+
+  <Testimonials
+    id="yorumlar"
+    title="Hastalarımız ne diyor?"
+    subtitle="Örnek yorumlar — gerçek sitede Google yorumlarınız otomatik çekilebilir."
+    testimonials={[
+      {
+        testimonial: 'Yıllardır implant yaptırmaktan korkuyordum. Hiç acı hissetmedim, fiyatı da ilk gün söylediler.',
+        rating: 5,
+        name: 'Ayşe K.',
+        job: 'İmplant tedavisi',
+      },
+      {
+        testimonial: 'Şeffaf plakla 8 ayda dişlerim düzeldi. İş yerinde kimse fark etmedi bile.',
+        rating: 5,
+        name: 'Mert D.',
+        job: 'Şeffaf plak',
+      },
+      {
+        testimonial: 'Kızım diş hekiminden çok korkardı, oyun odası sayesinde şimdi gitmek için sabırsızlanıyor.',
+        rating: 5,
+        name: 'Zeynep A.',
+        job: 'Çocuk diş hekimliği',
+      },
+    ]}
+  />
+
+  <Stats
+    countUp
+    stats={[
+      { title: 'Mutlu hasta', amount: '15K' },
+      { title: 'Uzman hekim', amount: '8' },
+      { title: 'Yerleştirilen implant', amount: '4.2K' },
+      { title: 'Yıllık tecrübe', amount: '12' },
+    ]}
+  />
+
+  <!-- SSS -->
+
+  <FAQs
+    id="sss"
+    title="Sık sorulan sorular"
+    tagline="SSS"
+    schema
+    items={[
+      {
+        title: 'İlk muayene ücretli mi?',
+        description: 'Hayır. İlk muayene, dijital röntgen ve tedavi planı ücretsizdir.',
+      },
+      {
+        title: 'İmplant tedavisi ne kadar sürer?',
+        description:
+          'Kemik yapısına göre değişir; çoğu hastada implant tek seansta yerleştirilir, kalıcı diş 2–3 ay sonra takılır.',
+      },
+      {
+        title: 'Taksit yapıyor musunuz?',
+        description: 'Evet, tüm kredi kartlarına 6 aya kadar taksit imkânı sunuyoruz.',
+      },
+      {
+        title: 'Hafta sonu açık mısınız?',
+        description: 'Cumartesi 09:00–17:00 arası açığız. Pazar günleri acil hattımız aktiftir.',
+      },
+    ]}
+  />
+
+  <CallToAction
+    actions={[
+      { variant: 'primary', text: 'Online Randevu Al', href: '/contact#form', icon: 'tabler:calendar-plus' },
+      { text: 'Hemen Ara', href: 'tel:+902160000000', icon: 'tabler:phone' },
+    ]}
+  >
+    <Fragment slot="title">Gülüşünüzü ertelemeyin</Fragment>
+
+    <Fragment slot="subtitle">İlk muayene ücretsiz. Bu hafta için boş randevu saatlerimiz var.</Fragment>
+  </CallToAction>
+</Layout>

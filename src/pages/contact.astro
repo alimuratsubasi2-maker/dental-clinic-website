@@ -1,0 +1,42 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import ContactUs from '~/components/widgets/Contact.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+
+const metadata = {
+  title: 'Randevu ve İletişim',
+  description: 'Gülüş Diş Kliniği online randevu formu, telefon, WhatsApp ve adres bilgileri.',
+};
+---
+
+<Layout metadata={metadata}>
+  <HeroText tagline="İletişim" title="Randevunuzu oluşturalım" />
+
+  <ContactUs
+    id="form"
+    title="Online randevu talebi"
+    subtitle="Formu doldurun, 30 dakika içinde sizi arayıp uygun saati birlikte belirleyelim."
+    inputs={[
+      { type: 'text', name: 'name', label: 'Ad Soyad' },
+      { type: 'tel', name: 'phone', label: 'Telefon' },
+      { type: 'text', name: 'treatment', label: 'İlgilendiğiniz tedavi (ör. implant, beyazlatma)' },
+    ]}
+    textarea={{ label: 'Eklemek istedikleriniz' }}
+    disclaimer={{
+      label: 'KVKK Aydınlatma Metni’ni okudum, kişisel verilerimin randevu amacıyla işlenmesini kabul ediyorum.',
+    }}
+    button="Randevu Talebi Gönder"
+    description="Mesai saatlerinde ortalama dönüş süremiz 30 dakikadır."
+  />
+
+  <Features2
+    title="Bize ulaşın"
+    items={[
+      { title: 'Telefon', description: '0216 000 00 00', icon: 'tabler:phone' },
+      { title: 'WhatsApp', description: '0500 000 00 00', icon: 'tabler:brand-whatsapp' },
+      { title: 'Adres', description: 'Caferağa Mah. Örnek Sok. No:1, Kadıköy / İstanbul', icon: 'tabler:map-pin' },
+      { title: 'Çalışma saatleri', description: 'Pzt–Cmt 09:00–19:00 · Pazar acil hat', icon: 'tabler:clock' },
+    ]}
+  />
+</Layout>
